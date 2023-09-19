@@ -37,8 +37,8 @@ function steveQuiz() {
   let q3 = prompt("Steve supports Arsenal?");
 
   if (q3.toLowerCase() === "no" || q3.toLowerCase() === "n") {
-    // correctAnswers++;
-    console.log("Yahtzee!");
+    correctAnswers++;
+    // console.log("Yahtzee!");
     alert("Yahtzee!");
   } else {
     // console.log("Wrong!");
@@ -66,6 +66,7 @@ function steveQuiz() {
     // console.log("Wrong!");
     alert("Wrong!");
   }
+
   alert(
     username +
       " Well done" +
