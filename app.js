@@ -1,5 +1,7 @@
 console.log("Hello There!");
 
+("use strict");
+
 let username = prompt("Hello There! What is your name?");
 console.log(username);
 

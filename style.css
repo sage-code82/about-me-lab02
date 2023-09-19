@@ -38,6 +38,11 @@ footer {
   text-align: center;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 button {
   padding: 10px 20px;
   background-color: #018e42;
