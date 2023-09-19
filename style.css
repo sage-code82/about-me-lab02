@@ -1,0 +1,13 @@
+header {
+  color: yellow;
+  background-color: black;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: black;
+  color: yellow;
+}
