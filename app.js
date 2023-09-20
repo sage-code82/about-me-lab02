@@ -3,7 +3,7 @@ console.log("Hello There!");
 ("use strict");
 
 let username = prompt("Hello There! What is your name?");
-console.log(username);
+console.log(username); // add a while loop to here to stop them from pressing cancel 20.03.23
 
 let welcome;
 
@@ -11,10 +11,11 @@ function kenobi() {
   welcome = "Hello " + username + " Welcome to the Book of Steve!";
   document.write(welcome);
 }
+// missing while loop this will force the user to say Yes or No from 20.0.23 recap
 
 function steveQuiz() {
   let correctAnswers = 0;
-  let q1 = prompt("Is Steve 41?");
+  let q1 = prompt("Is Steve 41?"); // toLowerCase can also go here change this as over complicating my code
 
   if (q1.toLowerCase() === "yes" || q1.toLowerCase() === "y") {
     correctAnswers++;
