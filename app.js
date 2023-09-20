@@ -118,11 +118,11 @@ function steveQuiz() {
   let wineQuestion = prompt(
     "While working in the Wine Industry I got to travel a abit, try and take a guess at any of the places I visited."
   ).toLowerCase();
-  let correctAnswer = 0;
 
+  let wineAnswer = 0;
   for (let i = 0; i < 5; i++) {
     if (wineVisit.includes(wineQuestion)) {
-      correctAnswer++;
+      correctAnswers++;
       alert("Noice! Good job");
       break;
     } else {
@@ -130,7 +130,7 @@ function steveQuiz() {
     }
   }
 
-  if (correctAnswer === 0) {
+  if (correctAnswers === 0) {
     alert(
       "You have failed me for the last time! The correct answers were: " +
         wineVisit.join(", ")
