@@ -129,6 +129,7 @@ function steveQuiz() {
 
   for (let i = 0; i < 5; i++) {
     if (wineVisit.includes(wineQuestion)) {
+      //should of used indexOf
       wineAnswer++;
       alert("Noice! Good job");
       break;
