@@ -94,12 +94,17 @@ function steveQuiz() {
 
   let kofiAge = parseInt(prompt("Take a guess... How old is my son Kofi?"));
   let userAttempts = 0;
+  // let attempts
+  // while (attempts > 0)
+  // same as question
+  // remove break attempts = 0 this is how Tim did it
 
   for (let i = 0; i < 3; i++) {
+    // why does this work? is it because of the if userAttempts? 21.09.23
     userAttempts++;
 
     if (kofiAge > 3) {
-      kofiAge = parseInt(prompt("Not quite, my Padawan is a bit younger")); //not sure if this is entirely right
+      kofiAge = parseInt(prompt("Not quite, my Padawan is a bit younger")); //not sure if this is entirely right letters do funky stuff as well. 21.09.23
     } else if (kofiAge < 3) {
       kofiAge = parseInt(prompt("MOOOORRRRREEEE"));
     } else {
@@ -110,6 +115,7 @@ function steveQuiz() {
   }
 
   if (userAttempts === 4 && kofiAge !== 2) {
+    // kofiAge not needed?????
     alert("You have failed me for the last time! The correct answer is 3.");
   }
 
