@@ -109,7 +109,7 @@ function steveQuiz() {
     }
   }
 
-  if (userAttempts === 3 && kofiAge !== 2) {
+  if (userAttempts === 4 && kofiAge !== 2) {
     alert("You have failed me for the last time! The correct answer is 3.");
   }
 
