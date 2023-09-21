@@ -110,7 +110,7 @@ function steveQuiz() {
     } else {
       correctAnswers++;
       alert("Good Gooooood ");
-      break;
+      break; // if i type in a letter it comes back as correct???
     }
   }
 
@@ -122,13 +122,14 @@ function steveQuiz() {
   let wineVisit = ["chile", "usa", "portugal", "france"];
 
   let wineQuestion = prompt(
-    "While working in the Wine Industry I got to travel a abit, try and take a guess at any of the places I visited."
+    "While working in the Wine Industry I got to travel a bit, try and take a guess at any of the places I visited."
   ).toLowerCase();
 
   let wineAnswer = 0;
+
   for (let i = 0; i < 5; i++) {
     if (wineVisit.includes(wineQuestion)) {
-      correctAnswers++;
+      wineAnswer++;
       alert("Noice! Good job");
       break;
     } else {
@@ -136,11 +137,8 @@ function steveQuiz() {
     }
   }
 
-  if (correctAnswers === 0) {
-    alert(
-      "You have failed me for the last time! The correct answers were: " +
-        wineVisit.join(", ")
-    );
+  if (wineAnswer === 5) {
+    alert("You didn't guess all the places correctly." + wineVisit.join(", ")); // this has stopped working
   }
 
   alert(
