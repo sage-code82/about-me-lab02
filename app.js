@@ -95,9 +95,8 @@ function steveQuiz() {
   let kofiAge = parseInt(prompt("Take a guess... How old is my son Kofi?"));
   let userAttempts = 0;
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 1; i < 4; i++) {
     userAttempts++;
-
     if (kofiAge > 3) {
       kofiAge = parseInt(prompt("Not quite, my Padawan is a bit younger"));
     } else if (kofiAge < 3) {
@@ -105,12 +104,11 @@ function steveQuiz() {
     } else {
       correctAnswers++;
       alert("Good Gooooood ");
-      break; // if i type in a letter it comes back as correct???
+      break;
     }
   }
 
-  if (userAttempts === 4) {
-    // this has stopped working, if i do not get the answer correct the bottom does not happen, also the 4th incorrect attempt does not give me any response
+  if (userAttempts === 3) {
     alert("You have failed me for the last time! The correct answer is 3.");
   }
 
@@ -122,7 +120,7 @@ function steveQuiz() {
 
   let wineAnswer = 0;
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 1; i < 6; i++) {
     if (wineVisit.includes(wineQuestion)) {
       alert("Noice! Good job");
       break;
@@ -132,8 +130,8 @@ function steveQuiz() {
     }
   }
 
-  if (wineAnswer === 6) {
-    alert("You didn't guess all the places correctly." + wineVisit.join(", ")); // this has stopped working, if i do not get the answer correct the bottom does not happen, also the 4th incorrect attempt does not give me any response
+  if (wineAnswer === 5) {
+    alert("You didn't guess all the places correctly." + wineVisit.join(", "));
   }
 
   alert(
