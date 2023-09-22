@@ -11,7 +11,7 @@ function kenobi() {
   welcome = "Hello " + username + " Welcome to the Book of Steve!";
   document.write(welcome);
 }
-// missing while loop this will force the user to say Yes or No from 20.0.23 recap CGPT
+// missing while loop this will force the user to say Yes or No from 20.0.23
 
 function steveQuiz() {
   let correctAnswers = 0;
@@ -138,7 +138,7 @@ function steveQuiz() {
     }
   }
 
-  if (wineAnswer === 5) {
+  if (wineAnswer === 6) {
     alert("You didn't guess all the places correctly." + wineVisit.join(", ")); // this has stopped working
   }
 
