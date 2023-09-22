@@ -94,17 +94,12 @@ function steveQuiz() {
 
   let kofiAge = parseInt(prompt("Take a guess... How old is my son Kofi?"));
   let userAttempts = 0;
-  // let attempts
-  // while (attempts > 0)
-  // same as question
-  // remove break attempts = 0 this is how Tim did it
 
   for (let i = 0; i < 3; i++) {
-    // why does this work? is it because of the if userAttempts? 21.09.23
     userAttempts++;
 
     if (kofiAge > 3) {
-      kofiAge = parseInt(prompt("Not quite, my Padawan is a bit younger")); //not sure if this is entirely right letters do funky stuff as well. 21.09.23
+      kofiAge = parseInt(prompt("Not quite, my Padawan is a bit younger"));
     } else if (kofiAge < 3) {
       kofiAge = parseInt(prompt("MOOOORRRRREEEE"));
     } else {
@@ -114,8 +109,8 @@ function steveQuiz() {
     }
   }
 
-  if (userAttempts === 4 && kofiAge !== 2) {
-    // kofiAge not needed?????
+  if (userAttempts === 4) {
+    // this has stopped working, if i do not get the answer correct the bottom does not happen, also the 4th incorrect attempt does not give me any response
     alert("You have failed me for the last time! The correct answer is 3.");
   }
 
@@ -129,17 +124,16 @@ function steveQuiz() {
 
   for (let i = 0; i < 5; i++) {
     if (wineVisit.includes(wineQuestion)) {
-      //should of used indexOf
-      wineAnswer++;
       alert("Noice! Good job");
       break;
     } else {
       wineQuestion = prompt("Never heard of it").toLowerCase();
+      wineAnswer++;
     }
   }
 
   if (wineAnswer === 6) {
-    alert("You didn't guess all the places correctly." + wineVisit.join(", ")); // this has stopped working
+    alert("You didn't guess all the places correctly." + wineVisit.join(", ")); // this has stopped working, if i do not get the answer correct the bottom does not happen, also the 4th incorrect attempt does not give me any response
   }
 
   alert(
