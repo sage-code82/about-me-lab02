@@ -93,6 +93,7 @@ function steveQuiz() {
 
   let kofiAge = parseInt(prompt("Take a guess... How old is my son Kofi?"));
   let userAttempts = 0;
+  let isKofiCorrect = false;
 
   for (let i = 1; i < 4; i++) {
     userAttempts++;
@@ -102,14 +103,15 @@ function steveQuiz() {
       kofiAge = parseInt(prompt("MOOOORRRRREEEE"));
     } else {
       correctAnswers++;
+      isKofiCorrect = true;
       alert("Good Gooooood ");
       break;
     }
   }
 
-  if (userAttempts === 3 && kofiAge !== 3) {
+  if (userAttempts === 3 && !isKofiCorrect) {
     alert("You have failed me for the last time! The correct answer is 3.");
-  } // if i type in the correct answer on the last guess it says it is wrong.
+  }
 
   let wineVisit = ["chile", "usa", "portugal", "france"];
 
@@ -118,11 +120,13 @@ function steveQuiz() {
   ).toLowerCase();
 
   let wineAnswer = 0;
+  let isWineCorrect = false;
 
   for (let i = 1; i < 6; i++) {
     if (wineVisit.includes(wineQuestion)) {
-      correctAnswers++;
       alert("Noice! Good job");
+      correctAnswers++;
+      isWineCorrect = true;
       break;
     } else {
       wineQuestion = prompt("Never heard of it").toLowerCase();
@@ -130,9 +134,9 @@ function steveQuiz() {
     }
   }
 
-  if (wineAnswer === 5) {
-    alert("Unlucky! I managed to visit this 4 places." + wineVisit.join(", "));
-  } //if i type in the correct answer on the last guess it says it is wrong
+  if (wineAnswer === 5 && !isWineCorrect) {
+    alert("You didn't guess all the places correctly: " + wineVisit.join(", "));
+  }
 
   alert(
     username +
