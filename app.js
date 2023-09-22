@@ -11,7 +11,6 @@ function kenobi() {
   welcome = "Hello " + username + " Welcome to the Book of Steve!";
   document.write(welcome);
 }
-// missing while loop this will force the user to say Yes or No from 20.0.23
 
 function steveQuiz() {
   let correctAnswers = 0;
@@ -108,9 +107,9 @@ function steveQuiz() {
     }
   }
 
-  if (userAttempts === 3) {
+  if (userAttempts === 3 && kofiAge !== 3) {
     alert("You have failed me for the last time! The correct answer is 3.");
-  }
+  } // if i type in the correct answer on the last guess it says it is wrong.
 
   let wineVisit = ["chile", "usa", "portugal", "france"];
 
@@ -122,6 +121,7 @@ function steveQuiz() {
 
   for (let i = 1; i < 6; i++) {
     if (wineVisit.includes(wineQuestion)) {
+      correctAnswers++;
       alert("Noice! Good job");
       break;
     } else {
@@ -131,8 +131,8 @@ function steveQuiz() {
   }
 
   if (wineAnswer === 5) {
-    alert("You didn't guess all the places correctly." + wineVisit.join(", "));
-  }
+    alert("Unlucky! I managed to visit this 4 places." + wineVisit.join(", "));
+  } //if i type in the correct answer on the last guess it says it is wrong
 
   alert(
     username +
