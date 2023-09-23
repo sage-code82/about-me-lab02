@@ -2,7 +2,13 @@ console.log("Hello There!");
 
 ("use strict");
 
-let username = prompt("Hello There! What is your name?");
+console.log("Hello There!");
+
+("use strict");
+let username;
+let correctAnswer = 0;
+
+username = prompt("Hello There! What is your name?");
 console.log(username);
 
 let welcome;
@@ -12,135 +18,81 @@ function kenobi() {
   document.write(welcome);
 }
 
+function quizButt() {
+  let start = confirm("Never tell me the odds! Punch it");
+
+  if (start === true) {
+    steveQuiz();
+  } else {
+    alert("Goodfly!");
+    return;
+  }
+}
+
 function steveQuiz() {
-  let correctAnswers = 0;
+  myAge();
+  myMarriage();
+  mySpurs();
+  myStarWars();
+  myKofi();
+}
 
-  let yayOrNay = false;
-  while (!yayOrNay) {
-    let q1 = prompt("Is Steve 41?").toLowerCase();
-
-    if (q1 === "yes" || q1 === "y") {
-      correctAnswers++;
-      alert("Yahtzee!");
-      yayOrNay = true;
-    } else if (q1 === "no" || q1 === "n") {
-      alert("Wrong!");
-      yayOrNay = true;
-    } else {
-      alert("This is not the way. Please enter 'yes' or 'no'.");
-    }
+function myAge() {
+  let ageAns = prompt("I am 21!").toLowerCase();
+  if (ageAns === "no") {
+    correctAnswer++;
+    alert("Yahtzee!");
+  } else if (ageAns !== "yes" && ageAns !== "no") {
+    myAge(); // Repeat the question if the input is not "yes" or "no"
+  } else {
+    alert("Wrong!");
   }
-  yayOrNay = false;
-  while (!yayOrNay) {
-    let q2 = prompt("Steve's Wife is called Kelly?").toLowerCase();
+}
 
-    if (q2 === "yes" || q2 === "y") {
-      correctAnswers++;
-      alert("Yahtzee!");
-      yayOrNay = true;
-    } else if (q2 === "no" || q2 === "n") {
-      alert("Wrong!");
-      yayOrNay = true;
-    } else {
-      alert("This is not the way. Please enter 'yes' or 'no'.");
-    }
+function myMarriage() {
+  let myMarAns = prompt("My wife is called Kelly?").toLowerCase();
+  if (myMarAns === "yes") {
+    alert("Yahtzee!");
+    correctAnswer++;
+  } else if (myMarAns !== "yes" && myMarAns !== "no") {
+    myMarriage(); // Repeat the question if the input is not "yes" or "no"
+  } else {
+    alert("Wrong!");
   }
-  yayOrNay = false;
-  while (!yayOrNay) {
-    let q3 = prompt("Steve supports Arsenal?").toLowerCase();
-    if (q3 === "no" || q3 === "n") {
-      correctAnswers++;
-      alert("Yahtzee!");
-      yayOrNay = true;
-    } else if (q3 === "yes" || q3 === "y") {
-      alert("Wrong!");
-      yayOrNay = true;
-    } else {
-      alert("This is not the way. Please enter 'yes' or 'no'.");
-    }
+}
+
+function mySpurs() {
+  let spursAns = prompt("I support Arsenal").toLowerCase();
+  if (spursAns === "no") {
+    alert("Yahtzee!");
+    correctAnswer++;
+  } else if (spursAns !== "yes" && spursAns !== "no") {
+    mySpurs(); // Repeat the question if the input is not "yes" or "no"
+  } else {
+    alert("Wrong!");
   }
+}
 
-  yayOrNay = false;
-  while (!yayOrNay) {
-    let q4 = prompt("Steve Bloody Loves Star Wars").toLowerCase();
-    if (q4 === "yes" || q4 === "y") {
-      correctAnswers++;
-      alert("Yahtzee!");
-      yayOrNay = true;
-    } else if (q4 === "no" || q4 === "n") {
-      alert("Wrong!");
-      yayOrNay = true;
-    } else {
-      alert("This is not the way. Please enter 'yes' or 'no'.");
-    }
+function myStarWars() {
+  let ansStar = prompt("I bloody love Star Wars.").toLowerCase();
+  if (ansStar === "yes") {
+    alert("Yahtzee!");
+    correctAnswer++;
+  } else if (ansStar !== "yes" && ansStar !== "no") {
+    myStarWars(); // Repeat the question if the input is not "yes" or "no"
+  } else {
+    alert("Wrong!");
   }
+}
 
-  yayOrNay = false;
-  while (!yayOrNay) {
-    let q5 = prompt("Kofi is named after an astronaught?").toLowerCase();
-
-    if (q5 === "no" || q5 === "n") {
-      correctAnswers++;
-      alert("Yahtzee!");
-      yayOrNay = true;
-    } else if (q5 === "yes" || q5 === "y") {
-      alert("Wrong!");
-      yayOrNay = true;
-    } else {
-      alert("This is not the way. Please enter 'yes' or 'no'.");
-    }
+function myKofi() {
+  let kofiAns = prompt("Kofi is named after an astronaut").toLowerCase();
+  if (kofiAns === "no") {
+    alert("Yahtzee!");
+    correctAnswer++;
+  } else if (kofiAns !== "yes" && kofiAns !== "no") {
+    myKofi(); // Repeat the question if the input is not "yes" or "no"
+  } else {
+    alert("Wrong!");
   }
-
-  let kofiAge = parseInt(prompt("Take a guess... How old is my son Kofi?"));
-  let userAttempts = 0;
-  let isKofiCorrect = false;
-
-  for (let i = 1; i < 4; i++) {
-    userAttempts++;
-    if (kofiAge > 3) {
-      kofiAge = parseInt(prompt("Not quite, my Padawan is a bit younger"));
-    } else if (kofiAge < 3) {
-      kofiAge = parseInt(prompt("MOOOORRRRREEEE"));
-    } else {
-      correctAnswers++;
-      isKofiCorrect = true;
-      alert("Good Gooooood ");
-      break;
-    }
-  }
-
-  if (userAttempts === 3 && !isKofiCorrect) {
-    alert("You have failed me for the last time! The correct answer is 3.");
-  }
-
-  let wineVisit = ["chile", "usa", "portugal", "france"];
-
-  let wineQuestion = prompt(
-    "While working in the Wine Industry I got to travel a bit, try and take a guess at any of the places I visited."
-  ).toLowerCase();
-
-  let wineAnswer = 0;
-  let isWineCorrect = false;
-
-  for (let i = 1; i < 6; i++) {
-    if (wineVisit.includes(wineQuestion)) {
-      alert("Noice! Good job");
-      correctAnswers++;
-      isWineCorrect = true;
-      break;
-    } else {
-      wineQuestion = prompt("Never heard of it").toLowerCase();
-      wineAnswer++;
-    }
-  }
-
-  if (wineAnswer === 5 && !isWineCorrect) {
-    alert("You didn't guess all the places correctly: " + wineVisit.join(", "));
-  }
-
-  alert(
-    username +
-      " Well done" +
-      ` you got ${correctAnswers} out of 7 correct answers!`
-  );
 }
