@@ -34,6 +34,7 @@ function steveQuiz() {
   myKofi();
   numberGuess();
   tableTop();
+  yourScore();
 }
 
 function myAge() {
@@ -136,7 +137,7 @@ function numberGuess() {
 }
 
 function tableTop() {
-  let myGames = ["shatterpoint ", " infinity ", " age of sigmar ", "warhammer"];
+  let myGames = ["shatterpoint", "infinity", "age of sigmar", "warhammer"];
 
   let gamesAnswer = prompt(
     "I love tabletop games, do you think you could name one of my faves?"
@@ -149,6 +150,7 @@ function tableTop() {
       gamesAnswer = prompt("Do you even game bro?").toLowerCase();
     } else {
       correctAnswer++;
+      console.log(correctAnswer);
       alert("Spot on lets chuck dice some time!");
       break;
     }
@@ -157,4 +159,11 @@ function tableTop() {
   if (answerAttempt > 4) {
     alert(`Whoops! You could of chosen any of these! ${myGames}`);
   }
+}
+
+function yourScore() {
+  alert(
+    username +
+      ` thank you for taking part in the quiz! You got a score of ${correctAnswer} out of 7!`
+  );
 }
